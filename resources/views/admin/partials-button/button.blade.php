@@ -1,10 +1,10 @@
-<a href="{{ route('admin.projects.show', $project) }}">
-    <button class="btn btn-warning mb-2 inline-block">Mostra</button>
+<a href="{{ route('admin.projects.edit', $project) }}" class="m-2">
+    <button class="btn btn-success inline-block">Modifica</button>
 </a>
-<button class="btn btn-success mb-2 inline-block">Modifica</button>
-<form action="" method="POST" class="inline-block">
+
+<form action="{{ route('admin.projects.destroy', $project) }}" method="POST" class="inline-block">
     @csrf
     @method('DELETE')
-    <button class="btn btn-danger">Elimina</button>
+    <button class="btn btn-danger" type="submit">Elimina</button>
 </form>
 
