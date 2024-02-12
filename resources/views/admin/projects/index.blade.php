@@ -9,13 +9,17 @@
             <h1>
                 Qui sono disponibili tutti i progetti di: {{ Auth::user()->name }}!
             </h1>
+            <a href="{{ route('admin.projects.create') }}" class="btn btn-primary">Crea un nuovo Progetto</a>
         </div>
         <div class="col-12">
             <table class="table">
                 <thead>
                   <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Titolo</th>
+                    <a href="">
+                        <th scope="col">Titolo</th>
+
+                    </a>
                     <th scope="col">Descrizione</th>
                     <th scope="col">data di consegna</th>
                     <th scope="col">Completato</th>
@@ -33,6 +37,9 @@
                     <td>{{ $project->complete ? 'ok' : 'Non ancora' }} 
                     </td>
                     <td>
+                        <a href="{{ route('admin.projects.show', $project) }}">
+                            <button class="btn btn-warning mb-2 inline-block">Mostra</button>
+                        </a>
                         @include('admin.partials-button.button')
                     </td>
                     @empty
