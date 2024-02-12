@@ -46,13 +46,13 @@
                     <a href="{{ route('admin.projects.show', $project) }}" class="m-2">
                         <button class="btn btn-success d-line-block">Modifica</button>
                     </a>
-                    <a href="{{ route('admin.projects.index') }}" class="m-2">
-                        <button class="btn btn-primary d-inline-block">Torna indietro</button>
-                    </a>
-
+                    
                 </div>
-
+                
             </form>
+            <a href="{{ route('admin.projects.index') }}" class="m-2">
+                <button class="btn btn-primary d-inline-block">Torna indietro</button>
+            </a>
         </div>
     </div>
 </div>

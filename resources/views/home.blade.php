@@ -13,6 +13,11 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    <a href="{{ route('admin.projects.index') }}">
+                        <button class="btn btn-primary m-2">
+                            Vai ai progetti
+                        </button>
+                    </a>
 
                     {{ __('You are logged in!') }}
                 </div>

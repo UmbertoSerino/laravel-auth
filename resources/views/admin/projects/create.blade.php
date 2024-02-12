@@ -46,15 +46,15 @@
                     <button class="btn btn-success m-2">
                         Crea
                     </button>
-                    <a href="{{ route('admin.projects.index') }}">
-                        <button class="btn btn-primary m-2">
-                            Torna indietro
-                        </button>
-                    </a>
-
+                    
                 </div>
-
+                
             </form>
+            <a href="{{ route('admin.projects.index') }}">
+                <button class="btn btn-primary m-2">
+                    Torna indietro
+                </button>
+            </a>
         </div>
     </div>
 </div>
