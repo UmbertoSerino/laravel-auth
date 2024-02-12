@@ -11,7 +11,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        // dd(Auth::user()->email, Auth::user()->password);
+        // dd(Auth::user()->email, Auth::user()->password, Auth::id(), Auth::check());
 
         return view('admin.dashboard');
     }
