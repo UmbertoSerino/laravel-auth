@@ -38,7 +38,7 @@
                     </td>
                     <td>
                         <a href="{{ route('admin.projects.show', $project) }}">
-                            <button class="btn btn-warning mb-2 inline-block">Mostra</button>
+                            <button class="btn btn-warning m-2 inline-block">Mostra</button>
                         </a>
                         @include('admin.partials-button.button')
                     </td>

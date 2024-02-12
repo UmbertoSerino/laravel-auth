@@ -33,21 +33,22 @@
                     <label for="date" class="input-group-text">Data:</label>
                     <input class="form-control" type="date" name="date" id="date" value="{{ old('date', $project->data) }}">
                 </div>
-                {{-- modificarlo con checkbox --}}
-                <div class="mb-3 input-group">
-                    <label for="complete" class="input-group-text">Comletato?:</label>
-                    <input class="form-control" type="text" name="complete" id="complete" value="{{ old('complete', $project->complete) }}">
-                </div>
+                <div class="form-check form-switch">
+                    <input type="hidden" name="complete" value="0">
+                    <input class="form-check-input" type="checkbox" role="switch" id="complete" name="complete" value="1">
+                    <label class="form-check-label" for="complete">Completato?</label>
+                </div> 
                 <div class="mb-3 input-group">
                     <label for="description" class="input-group-text">Descrizione:</label>
                     <textarea class="form-control"  name="description" id="description" cols="40" rows="10">{{ old('description',$project->description)  }}</textarea>
                 </div>
                 <div class="mb-3 input-group">
                     <a href="{{ route('admin.projects.show', $project) }}" class="m-2">
-                        <button class="btn btn-success inline-block">Modifica</button>
+                        <button class="btn btn-success d-line-block">Modifica</button>
                     </a>
-
-                    <a href="{{ route('admin.projects.index') }}" class="btn btn-primary">Torna indietro</a>
+                    <a href="{{ route('admin.projects.index') }}" class="m-2">
+                        <button class="btn btn-primary d-inline-block">Torna indietro</button>
+                    </a>
 
                 </div>
 
