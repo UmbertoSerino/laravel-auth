@@ -14,7 +14,8 @@
                       <p class="card-text">Descrizione: {{ $project['description'] }}</p>
                       <p class="card-text">Completato: {{ $project['complete'] }}</p>
                       <a href="{{ route('admin.projects.index') }}" class="btn btn-primary">Torna indietro</a>
-                      <a href="{{ route('admin.projects.edit',$project->id) }}" class="btn btn-warning">Modifica</a>
+                      @include('admin.partials-button.button')
+
                   </div>
                 </div>
             </div>
