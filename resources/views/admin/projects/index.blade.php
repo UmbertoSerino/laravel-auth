@@ -1,6 +1,8 @@
 @extends('layouts.admin')
 
-@section('title', 'Admin My Projects')
+<title>@yield('head-title', 'My Project - (Index)')</title>
+
+
 
 @section('main-content')
 <div class="container">

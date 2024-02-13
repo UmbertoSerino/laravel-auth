@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Admin My Project')
+<title>@yield('head-title', 'My Project - (Show)')</title>
 
 @section('main-content')
 <section class="container-heros-cards">

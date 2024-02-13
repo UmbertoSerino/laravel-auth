@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Crea un nuovo progetto')
+@section('head-title', 'Crea un nuovo progetto')
 
 @section('main-content')
 <div class="container">
