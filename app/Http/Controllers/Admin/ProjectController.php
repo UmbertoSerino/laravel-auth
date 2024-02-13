@@ -78,11 +78,13 @@ class ProjectController extends Controller
 
     public function indexDelete()
     {
-        // per vedere i progetti eliminati
+        $projects = Project::onlyTrashed()->get();
+        return view('admin.projects.soft-delete.index', compact('projects'));
     }
-    public function showDelete(Project $project)
+    public function showDelete(string $id)
     {
-        // per vedere il signolo progetto eliminato
+        $project = Project::withTrashed()->where('id', $id)->first();
+        return view('admin.projects.soft-delete.show', compact('project'));
     }
     public function restoreDelete(Project $project)
     {
