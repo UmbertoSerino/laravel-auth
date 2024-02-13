@@ -9,7 +9,6 @@
     <div class="row justify-content-center">
         <div class="col-12">
             @if($errors->any())
-
             <div class="alert alert-danger" role="alert">
                 <ul>
                     @foreach ($errors->all() as $error)
@@ -23,7 +22,7 @@
             </div>
         @endif
 
-            <form action="route-for-create-or-edit" method="POST">
+            <form action="@yield('route-for-create-or-edit')" method="POST">
                 @csrf
                 @yield('method-for-create-or-edit')
                 <div class="mb-3 input-group">
