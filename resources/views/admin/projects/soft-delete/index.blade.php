@@ -42,9 +42,11 @@
                         <a href="{{ route('admin.softdelete.show', $project) }}">
                             <button class="btn btn-primary m-2 inline-block">Mostra</button>
                         </a>
-                        <a href="{{ route('admin.softdelete.restore', $project) }}">
+                      <form action="{{ route('admin.softdelete.restore', $project) }}" method="POST">
+                        @csrf
+                        @method('PATCH')
                           <button class="btn btn-warning m-2 inline-block">Recupera</button>
-                      </a>
+                      </form>
                       <form action="{{ route('admin.softdelete.destroy', $project) }}" method="POST">
                         @csrf
                         @method('DELETE')

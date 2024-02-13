@@ -86,9 +86,11 @@ class ProjectController extends Controller
         $project = Project::withTrashed()->where('id', $id)->first();
         return view('admin.projects.soft-delete.show', compact('project'));
     }
-    public function restoreDelete(Project $project)
+    public function restoreDelete(string $id)
     {
-        // per recuperare il signolo progetto eliminato
+        $project = Project::withTrashed()->where('id', $id)->first();
+        $project->restore();
+        return redirect()->route('admin.projects.index');
     }
     public function destroyDelete(Project $project)
     {

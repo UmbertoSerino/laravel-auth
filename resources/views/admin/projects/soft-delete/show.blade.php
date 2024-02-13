@@ -16,7 +16,6 @@
                       <a href="{{ route('admin.projects.index') }}">
                         <button class="btn btn-primary d-inline-block">Torna indietro</button>
                       </a>
-                      @include('admin.partials-button.button')
                   </div>
                 </div>
             </div>
