@@ -36,7 +36,7 @@
                     {{-- se maggiore di 100 riduci la stringa a 100 e aggiungi ... --}}
                     <td> {{ strlen($project->description) > 100 ? substr($project->description, 0, 100) . '...' : $project->description }}</td>
                     <td>{{ $project->date }}</td>
-                    <td>{{ $project->complete ? 'ok' : 'Non ancora' }} 
+                    <td>{{ $project->complete ? 'Completato' : 'Incompleto' }} 
                     </td>
                     <td>
                         <a href="{{ route('admin.projects.show', $project) }}">

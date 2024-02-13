@@ -7,13 +7,13 @@
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
-                <div class="card-body">
+                <div class="card-body d-flex justify-content-center align-items-center">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif
-                    <a href="{{ route('admin.projects.index') }}">
+                    <a href="{{ route('admin.projects.index') }}" class="text-decoration-none">
                         <button class="btn btn-primary m-2">
                             Vai ai progetti
                         </button>

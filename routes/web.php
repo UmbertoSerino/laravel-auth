@@ -26,7 +26,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 
 Route::middleware('auth')->get('dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 
-Route::middleware('auth', 'verified')
+Route::middleware('auth')
     ->name('admin.')
     ->prefix('admin')
     ->group(function () {
