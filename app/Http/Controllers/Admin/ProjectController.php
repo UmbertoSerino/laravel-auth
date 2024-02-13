@@ -81,6 +81,7 @@ class ProjectController extends Controller
         $projects = Project::onlyTrashed()->get();
         return view('admin.projects.soft-delete.index', compact('projects'));
     }
+    // find or fail does not work with delete
     public function showDelete(string $id)
     {
         $project = Project::withTrashed()->where('id', $id)->first();
@@ -92,8 +93,11 @@ class ProjectController extends Controller
         $project->restore();
         return redirect()->route('admin.projects.index');
     }
-    public function destroyDelete(Project $project)
+    public function destroyDelete(string $id)
     {
-        // per eliminare in modo definitivo signolo progetto
+        $project = Project::withTrashed()->where('id', $id)->first();
+        $project->forceDelete();
+
+        return redirect()->route('admin.projects.index');
     }
 }
