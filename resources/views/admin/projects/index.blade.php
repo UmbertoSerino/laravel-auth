@@ -7,11 +7,14 @@
 @section('main-content')
 <div class="container">
     <div class="row">
-        <div class="col-12">
-            <h1>
-                Qui sono disponibili tutti i progetti di: {{ Auth::user()->name }}!
-            </h1>
+      <h1 class="mb-5 text-center">
+          Qui sono disponibili tutti i progetti di: {{ Auth::user()->name }}!
+      </h1>
+        <div class="col-6">
             <a href="{{ route('admin.projects.create') }}" class="btn btn-primary">Crea un nuovo Progetto</a>
+        </div>
+        <div class="col-6 mb-5">
+          <a href="{{ route('admin.softdelete.index') }}" class="btn btn-primary">Il tuo cestino</a>
         </div>
         <div class="col-12">
             <table class="table">
@@ -33,7 +36,6 @@
                   <tr>
                     <th scope="row">{{ $project->id }}</th>
                     <td>{{ $project->title }}</td>
-                    {{-- se maggiore di 100 riduci la stringa a 100 e aggiungi ... --}}
                     <td> {{ strlen($project->description) > 100 ? substr($project->description, 0, 100) . '...' : $project->description }}</td>
                     <td>{{ $project->date }}</td>
                     <td>{{ $project->complete ? 'Completato' : 'Incompleto' }} 
