@@ -75,4 +75,21 @@ class ProjectController extends Controller
         $project->delete();
         return redirect()->route('admin.projects.index');
     }
+
+    public function indexDelete()
+    {
+        // per vedere i progetti eliminati
+    }
+    public function showDelete(Project $project)
+    {
+        // per vedere il signolo progetto eliminato
+    }
+    public function restoreDelete(Project $project)
+    {
+        // per recuperare il signolo progetto eliminato
+    }
+    public function destroyDelete(Project $project)
+    {
+        // per eliminare in modo definitivo signolo progetto
+    }
 }

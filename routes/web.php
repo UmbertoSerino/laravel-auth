@@ -30,6 +30,13 @@ Route::middleware('auth')
     ->name('admin.')
     ->prefix('admin')
     ->group(function () {
+        // Route Dashboard
         Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+        // Route Soft Delete - Delete
+        Route::get('/project/softdelete', [AdminProjectController::class, 'indexDelete'])->name('admin.softdelete.index');
+        Route::get('/project/softdelete/{project}', [AdminProjectController::class, 'showDelete'])->name('admin.sfotdelete.show');
+        Route::patch('/project/softdelete/{project}', [AdminProjectController::class, 'restoreDelete'])->name('admin.sfotdelete.restore');
+        Route::delete('/project/softdelete/{project}', [AdminProjectController::class, 'destroyDelete'])->name('admin.sfotdelete.destroy');
+        // Route Resource Project
         Route::resource('/projects', AdminProjectController::class);
     });
