@@ -47,6 +47,8 @@
                         @method('PATCH')
                           <button class="btn btn-warning m-2 inline-block">Recupera</button>
                       </form>
+
+                      
                       <form action="{{ route('admin.softdelete.destroy', $project) }}" method="POST">
                         @csrf
                         @method('DELETE')

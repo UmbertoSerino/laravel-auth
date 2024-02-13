@@ -31,7 +31,7 @@
                 </div>
                 <div class="mb-3 input-group">
                     <label for="date" class="input-group-text">Data:</label>
-                    <input class="form-control" type="date" name="date" id="date" value="{{ old('date', $project->data) }}">
+                    <input class="form-control" type="date" name="date" id="date" value="{{ old('date', $project->date) }}">
                 </div>
                 <div class="form-check form-switch">
                     <input type="hidden" name="complete" value="0">
